@@ -1,0 +1,139 @@
+
+命令：
+
+	路劲示例
+	cd D:
+	cd Git
+	cd Test
+	
+	git init	把这个目录变成git可以管理的仓库
+	
+	git add <filname>	//添加文件到暂存区
+	
+	git commit -m“ ”	//提交文件并添加文件的说明 必须先add
+	
+	git commit <filname> -m""	//提交指定名字的文件
+	
+	git diff <filname>	//查看文件变化
+	
+	git log		//查看历史信息
+	
+	git log -pretty=oneline		//在一行显示历史版本号和信息
+	
+	git reset  --hard HEAD^		//回退回上一个版本一个^代表一个版本
+	
+	git reset  --hard HEAD~x	//X代表回退多少个版本
+	
+	cat <filname>	//查看文件
+	
+	git reflog //获取版本号
+	
+	git reset  --hard 版本号 	//通过版本号回退
+	
+	git checkout -- <filename>	//丢弃为保存的工作 --很重要
+	
+	rm <filename>		//删除文件  但并未提交
+	
+	
+	远程仓库创建 注册GitHub账号
+	然后在用户目录下看是否有.ssh文件夹
+	若没有的话 在Git命令下 输入ssh-keygen  -t rsa –C “youremail@example.com”
+	登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，
+	在Key文本框里黏贴id_rsa.pub文件的内容。
+	点击 Add Key
+	
+	登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。
+	然后复制提供的链接 使用
+	git remote add origin <链接> 	//关联
+	git push -u origin master		//推送
+	
+	以后每次更新时
+	git push origin master	
+	
+	git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令
+	git branch dev
+	git checkout dev
+	
+	git branch查看分支，会列出所有的分支，当前分支前面会添加一个星号
+	
+	git merge dev 
+	git merge命令用于合并指定分支到当前分支上
+
+	删除分支：git branch –d name
+
+	git merge –no-ff  -m “注释” <分支>		//禁用”Fast forward”模式，(在这种模式下，删除分支后，会丢掉分支信息)
+	
+	有A分支正在工作 同时B分支想创建而且先于A分支完成  
+	可以使用 git stash 来隐藏当前工作现场
+	当B分支完成后删除B分支后 
+	可以使用git stash list来查看之前隐藏的工作
+	然后是恢复
+	1.git stash apply恢复，恢复后，stash内容并不删除，你需要使用命令git stash drop来删除。
+	2.另一种方式是使用git stash pop,恢复的同时把stash内容也删除了。
+	
+	要查看远程库的信息 使用 git remote
+	要查看远程库的详细信息 使用 git remote –v
+	
+	分支推送
+	git push origin <分支>
+	
+	
+	mkdir：         XX (创建一个空目录 XX指目录名)
+	pwd：          显示当前目录的路径。
+	git init          把当前的目录变成可以管理的git仓库，生成隐藏.git文件。
+	git add XX       把xx文件添加到暂存区去。
+	git commit –m “XX”  提交文件 –m 后面的是注释。
+	git status        查看仓库状态
+	git diff  XX      查看XX文件修改了那些内容
+	git log          查看历史记录
+	git reset  --hard HEAD^ 或者 git reset  --hard HEAD~ 回退到上一个版本
+						(如果想回退到100个版本，使用git reset –hard HEAD~100 )
+	cat XX         查看XX文件内容
+	git reflog       查看历史记录的版本号id
+	git checkout -- XX  把XX文件在工作区的修改全部撤销。
+	git rm XX          删除XX文件
+	git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库
+	git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
+	git clone https://github.com/tugenhua0707/testgit  从远程库中克隆
+	git checkout –b dev  创建dev分支 并切换到dev分支上
+	git branch  查看当前所有的分支
+	git checkout master 切换回master分支
+	git merge dev    在当前的分支上合并dev分支
+	git branch –d dev 删除dev分支
+	git branch name  创建分支
+	git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作
+	git stash list 查看所有被隐藏的文件列表
+	git stash apply 恢复被隐藏的文件，但是内容不删除
+	git stash drop 删除文件
+	git stash pop 恢复文件的同时 也删除文件
+	git remote 查看远程库的信息
+	git remote –v 查看远程库的详细信息
+	git push origin master  Git会把master分支推送到远程库对应的远程分支上
+
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
