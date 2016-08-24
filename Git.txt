@@ -14,6 +14,8 @@
 	
 	git commit <filname> -m""	//提交指定名字的文件
 	
+	git commit --amend 对于已经修改提交过的注释，如果需要修改，可以借助 git commit --amend 来进行
+
 	git diff <filname>	//查看文件变化
 	
 	git log		//查看历史信息
@@ -31,7 +33,21 @@
 	git reset  --hard 版本号 	//通过版本号回退
 	
 	git checkout -- <filename>	//丢弃为保存的工作 --很重要
+
+	git checkout branch	检出branch分支。更新HEAD以指向branch分支，以及用branch  指向的树更新暂存区和工作区。
+
+	git checkout	汇总显示工作区、暂存区与HEAD的差异。
 	
+	git checkout HEAD 汇总显示工作区、暂存区与HEAD的差异。
+
+	git checkout -- filename	用暂存区中filename文件来覆盖工作区中的filename文件。相当于取消自上次执行git add filename以来（如果执行过）的本地修改。
+
+	git checkout branch -- filename 维持HEAD的指向不变。用branch所指向的提交中filename替换暂存区和工作区中相   应的文件。注意会将暂存区和工作区中的filename文件直接覆盖。
+
+	git checkout -- . 或写作 git checkout .
+
+	注意git checkout 命令后的参数为一个点（“.”）。这条命令最危险！会取消所有本地的  修改（相对于暂存区）。相当于用暂存区的所有文件直接覆盖本地文件，不给用户任何   确认的机会！
+
 	rm <filename>		//删除文件  但并未提交
 	
 	
